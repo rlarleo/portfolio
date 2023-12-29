@@ -53,6 +53,7 @@ const PersistentDrawerRight: React.FC = () => {
             width: drawerWidth,
             justifyContent: "center",
             background: "transparent",
+            alignItems: "center",
           },
         }}
         variant="persistent"
@@ -63,6 +64,7 @@ const PersistentDrawerRight: React.FC = () => {
           color="primary"
           edge="end"
           onClick={handleDrawerOpen}
+          sx={{ width: "fit-content" }}
           // sx={{ ...(open && { display: "none" }) }}
         >
           <MenuIcon />

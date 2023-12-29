@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Box, Stack } from "@mui/material";
 import Banner from "@pulbic/images/banner.png";
-import "../styles.css";
+import "./styles.css";
 import { motion } from "framer-motion";
-
-// import { Link } from 'react-scroll';
-// import { isMobile } from 'react-device-detect';
-// import LinkButton from '../component/Button/LinkButton'
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setMotionState,
+  selectMotionState,
+} from "../store/motion/motion.slice";
 
 const HeroBanner: React.FC = () => {
-  const [showMotion, setShowMotion] = useState(true);
+  const dispatch = useDispatch();
+  const showMotion = useSelector(selectMotionState);
 
   useEffect(() => {
     setTimeout(() => {
-      setShowMotion(false);
+      dispatch(setMotionState(false));
     }, 2000);
   });
+
   return (
     <div className="App-section">
       {showMotion && (
@@ -25,7 +28,7 @@ const HeroBanner: React.FC = () => {
             animate={{
               scale: [1, 2, 2, 1, 100],
               rotate: [0, 0, 180, 180, 0],
-              borderRadius: ["0%", "0%", "50%", "50%", "0%"],
+              borderRadius: ["10%", "10%", "50%", "50%", "0%"],
             }}
             transition={{
               duration: 2,
