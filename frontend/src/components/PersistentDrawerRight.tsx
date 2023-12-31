@@ -49,7 +49,7 @@ const PersistentDrawerRight: React.FC = () => {
           width: drawerWidth,
           flexShrink: 0,
           "& .MuiDrawer-paper": {
-            borderLeft: "1.5px solid rgba(0, 0, 0, 0.12)",
+            borderLeft: "1.8px solid rgba(255, 255, 255, 0.12)",
             width: drawerWidth,
             justifyContent: "center",
             background: "transparent",
@@ -61,13 +61,11 @@ const PersistentDrawerRight: React.FC = () => {
         open
       >
         <IconButton
-          color="primary"
           edge="end"
           onClick={handleDrawerOpen}
-          sx={{ width: "fit-content" }}
-          // sx={{ ...(open && { display: "none" }) }}
+          sx={{ width: "fit-content", color: "white" }}
         >
-          <MenuIcon />
+          <MenuIcon sx={{ fontSize: "2rem" }} />
         </IconButton>
       </Drawer>
       <Drawer
